@@ -75,6 +75,15 @@ function calculateEllipseArea() {
 }
 
 
+
+
+function calculateRhombusArea(){
+const d1 = getInputValue('Rhombus-diagonal1');
+const d2 = getInputValue('Rhombus-diagonal2');
+const rhombusArea = 0.5* d1 * d2;
+setElementInnerText('display-Rhombus-area', rhombusArea );
+
+}
 //reusable function to get input fild value number
 function getInputValue(fieldId){
     const inputField = document.getElementById(fieldId);
