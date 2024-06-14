@@ -25,6 +25,10 @@ function calculateTriangleArea() {
     displayArea.innerText = area; 
 }
 
+
+
+
+
 function calculateRectangleArea(){
 //get rectangle width 
    const withFiled =document.getElementById('rectangle-width');
@@ -48,3 +52,29 @@ displayRectangleArea.innerText=rectangleArea;
 
 }
 
+
+
+//reUsable function
+
+function calculateParallelogramArea(){
+
+
+    const base = getInputValue('parallelogram-base');
+    const height = getInputValue('parallelogram-height');
+    const area = base * height;
+    setElementInnerText('display-parallelogram-area',area)
+   
+}
+
+function getInputValue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value;
+}
+//reusable set text ,p,div,etc 
+
+function setElementInnerText(elementId,area){
+    const textField = document.getElementById(elementId);
+    textField.innerText = area;
+}
