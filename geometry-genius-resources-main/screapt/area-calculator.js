@@ -1,99 +1,96 @@
-
-
+// Function to calculate the area of a triangle
 function calculateTriangleArea() {
-    // Get triangle base value
-    const baseField = document.getElementById('triangle-base');
-    const baseFieldValueStr = baseField.value;
-    const baseFieldValue = parseFloat(baseFieldValueStr);
+    const base = getInputValue('triangle-base');
+    const height = getInputValue('triangle-height');
 
-    // Get triangle height value
-    const heightField = document.getElementById('triangle-height');
-    const heightFieldValueStr = heightField.value;
-    const heightFieldValue = parseFloat(heightFieldValueStr);
-
-    // Check if the inputs are valid numbers
-    if (isNaN(baseFieldValue) || isNaN(heightFieldValue) || baseFieldValue <= 0 || heightFieldValue <= 0) {
+    if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
         alert("Please enter valid positive numbers for base and height.");
         return;
     }
 
-    // Calculate area
-    const area = 0.5 * baseFieldValue * heightFieldValue;
-
-    // Display area
-    const displayArea = document.getElementById('display-area');
-    displayArea.innerText = area; 
+    const area = 0.5 * base * height;
+    setElementInnerText('display-area', area);
 }
 
+// Function to calculate the area of a rectangle
+function calculateRectangleArea() {
+    const width = getInputValue('rectangle-width');
+    const length = getInputValue('rectangle-length');
 
+    if (isNaN(width) || isNaN(length) || width <= 0 || length <= 0) {
+        alert('Please enter valid positive numbers for width and length.');
+        return;
+    }
 
-
-
-function calculateRectangleArea(){
-//get rectangle width 
-   const withFiled =document.getElementById('rectangle-width');
-   const widthValue= withFiled.value;
-   const width = parseFloat(widthValue);
-
-//get rectangle langth
-
-const langthFiled =document.getElementById('rectangle-length');
-
-const langthValue = langthFiled.value;
-const langth = parseFloat( langthValue);
-
-
-// calculate area 
-
-const rectangleArea = width* langth;
-const displayRectangleArea = document.getElementById('display-rectangle-area');
-displayRectangleArea.innerText=rectangleArea;
-
-
+    const area = width * length;
+    setElementInnerText('display-rectangle-area', area);
 }
 
-
-
-//reUsable function
-
-function calculateParallelogramArea(){
-
-
+// Function to calculate the area of a parallelogram
+function calculateParallelogramArea() {
     const base = getInputValue('parallelogram-base');
     const height = getInputValue('parallelogram-height');
+
+    if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+        alert('Please enter valid positive numbers for base and height.');
+        return;
+    }
+
     const area = base * height;
-    setElementInnerText('display-parallelogram-area',area)
-   
+    setElementInnerText('display-parallelogram-area', area);
 }
+
+// Function to calculate the area of an ellipse
 function calculateEllipseArea() {
+    const majorRadius = getInputValue('ellipse-major-radius');
+    const minorRadius = getInputValue('ellipse-minor-radius');
 
-    const majorRadious = getInputValue('Ellipse-major-radius');
-    const mainorRadious = getInputValue('Ellipse-mainor-radius');
+    if (isNaN(majorRadius) || isNaN(minorRadius) || majorRadius <= 0 || minorRadius <= 0) {
+        alert('Please enter valid positive numbers for major and minor radius.');
+        return;
+    }
 
-    const ellipseArea = Math.PI * majorRadious * mainorRadious;
-    setElementInnerText('display-Ellipse-area', ellipseArea .toFixed(2));
+    const area = Math.PI * majorRadius * minorRadius;
+    setElementInnerText('display-ellipse-area', area.toFixed(2));
 }
 
+// Function to calculate the area of a rhombus
+function calculateRhombusArea() {
+    const d1 = getInputValue('rhombus-diagonal1');
+    const d2 = getInputValue('rhombus-diagonal2');
 
+    if (isNaN(d1) || isNaN(d2) || d1 <= 0 || d2 <= 0) {
+        alert('Please enter valid positive numbers for diagonals.');
+        return;
+    }
 
-
-function calculateRhombusArea(){
-const d1 = getInputValue('Rhombus-diagonal1');
-const d2 = getInputValue('Rhombus-diagonal2');
-const rhombusArea = 0.5* d1 * d2;
-setElementInnerText('display-Rhombus-area', rhombusArea );
-
+    const area = 0.5 * d1 * d2;
+    setElementInnerText('display-rhombus-area', area);
 }
-//reusable function to get input fild value number
-function getInputValue(fieldId){
+
+// Function to calculate the area of a pentagon
+function calculatePentagonArea() {
+    const perimeter = getInputValue('pentagon-perimeter');
+    const apothem = getInputValue('pentagon-apothem');
+
+    if (isNaN(perimeter) || isNaN(apothem) || perimeter <= 0 || apothem <= 0) {
+        alert('Please enter valid positive numbers for perimeter and apothem.');
+        return;
+    }
+
+    const area = 0.5 * perimeter * apothem;
+    setElementInnerText('display-pentagon-area', area);
+}
+
+// Reusable function to get input field value as a number
+function getInputValue(fieldId) {
     const inputField = document.getElementById(fieldId);
-    const inputValueText = inputField.value;
-    const value = parseFloat(inputValueText);
+    const value = parseFloat(inputField.value);
     return value;
 }
-//reusable set text ,p,div,etc 
 
-function setElementInnerText(elementId,area){
+// Reusable function to set text content of an element
+function setElementInnerText(elementId, value) {
     const textField = document.getElementById(elementId);
-    textField.innerText = area;
+    textField.innerText = value;
 }
