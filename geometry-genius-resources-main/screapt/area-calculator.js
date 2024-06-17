@@ -18,7 +18,7 @@ function calculateRectangleArea() {
     const length = getInputValue('rectangle-length');
 
     if (isNaN(width) || isNaN(length) || width <= 0 || length <= 0) {
-        alert('Please enter valid positive numbers for width and length.');
+        alert("Please enter valid positive numbers for width and length.");
         return;
     }
 
@@ -32,7 +32,7 @@ function calculateParallelogramArea() {
     const height = getInputValue('parallelogram-height');
 
     if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
-        alert('Please enter valid positive numbers for base and height.');
+        alert("Please enter valid positive numbers for base and height.");
         return;
     }
 
@@ -46,7 +46,7 @@ function calculateEllipseArea() {
     const minorRadius = getInputValue('ellipse-minor-radius');
 
     if (isNaN(majorRadius) || isNaN(minorRadius) || majorRadius <= 0 || minorRadius <= 0) {
-        alert('Please enter valid positive numbers for major and minor radius.');
+        alert("Please enter valid positive numbers for major and minor radius.");
         return;
     }
 
@@ -60,7 +60,7 @@ function calculateRhombusArea() {
     const d2 = getInputValue('rhombus-diagonal2');
 
     if (isNaN(d1) || isNaN(d2) || d1 <= 0 || d2 <= 0) {
-        alert('Please enter valid positive numbers for diagonals.');
+        alert("Please enter valid positive numbers for diagonals.");
         return;
     }
 
@@ -74,7 +74,7 @@ function calculatePentagonArea() {
     const apothem = getInputValue('pentagon-apothem');
 
     if (isNaN(perimeter) || isNaN(apothem) || perimeter <= 0 || apothem <= 0) {
-        alert('Please enter valid positive numbers for perimeter and apothem.');
+        alert("Please enter valid positive numbers for perimeter and apothem.");
         return;
     }
 
@@ -93,4 +93,11 @@ function getInputValue(fieldId) {
 function setElementInnerText(elementId, value) {
     const textField = document.getElementById(elementId);
     textField.innerText = value;
+}
+
+
+//add to calculation entry
+function addToCalculationEnty(){
+
+    console.log("adding soon ")
 }
